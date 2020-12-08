@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RaspberryPi_LED" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raspberry Pi LED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-xe-PWM">
+                                <rect key="frame" x="64" y="426.5" width="286" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="UO0-bK-5C9">
+                                <rect key="frame" x="32" y="501.5" width="350" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-cj-ubf">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="41"/>
+                                        <color key="backgroundColor" red="0.45882352941176469" green="0.66274509803921566" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="On">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KmB-Tc-9x0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMq-5f-ZTw">
+                                        <rect key="frame" x="0.0" y="59" width="350" height="41"/>
+                                        <color key="backgroundColor" red="0.73725490196078436" green="0.066666666666666666" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Off">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="offPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C26-Gs-Uw9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="raspberryPi" translatesAutoresizingMaskIntoConstraints="NO" id="rWd-d0-Nmc">
+                                <rect key="frame" x="16" y="60" width="382" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="vgl-MU-gWW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UO0-bK-5C9" secondAttribute="trailing" constant="32" id="5q5-fV-fqB"/>
+                            <constraint firstItem="NtO-xe-PWM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8nr-dj-YAh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rWd-d0-Nmc" secondAttribute="trailing" constant="16" id="Aqc-xb-VSM"/>
+                            <constraint firstItem="UO0-bK-5C9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="EtE-kf-MP3"/>
+                            <constraint firstItem="rWd-d0-Nmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WDd-mY-Ldp"/>
+                            <constraint firstItem="NtO-xe-PWM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oVf-sg-Kjo"/>
+                            <constraint firstItem="UO0-bK-5C9" firstAttribute="top" secondItem="NtO-xe-PWM" secondAttribute="bottom" constant="32" id="wNO-ah-HaG"/>
+                            <constraint firstItem="rWd-d0-Nmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wyp-0b-HR6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="offButton" destination="oMq-5f-ZTw" id="gBW-xq-w09"/>
+                        <outlet property="onButton" destination="H2L-cj-ubf" id="3x0-hb-44O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88.405797101449281" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="raspberryPi" width="1000" height="890"/>
+    </resources>
+</document>
